@@ -1,0 +1,68 @@
+{% load static %}
+
+
+
+{% block content %}
+
+
+<h1> Student list </h1>
+
+<table id = "mytable" class = "datatable" > 
+  
+
+<thead>
+<tr>
+  <th> Serial Number </th>
+    <th> Roll number </th> 
+    <th> First name </th>
+    <th> Last name </th>
+    <th> Selected Course </th>
+    <th> Marks </th>
+  </tr>
+</thead>
+
+<tbody>
+    {% for Student in studentlist %}
+    <tr>
+      <td>{{forloop.counter}} </td>
+      <td> {{Student.roll_no}} </td>
+      <td> {{Student.First_name}} </td>
+      <td> {{Student.Last_name }} </td>
+      <td> {{Student.Cname }} </td>
+      <td> {{Student.marks }} </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table> 
+
+
+  <h1> Course list </h1>
+  <table id = "mytable" class = "datatable" > 
+  <thead>
+    <tr>
+      <th> Course Code </th>
+        <th> Course Name </th> 
+      </tr>
+    </thead>
+    
+    <tbody>
+        {% for Course in courselist %}
+        <tr>
+          <td>{{forloop.counter}} </td>
+          <td> {{Course.Ccode}} </td>
+          <td> {{Course.Cname}} </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      </table> 
+
+
+
+ {% endblock %}
+
+ {% block javaScript %}
+ 
+ 
+ {% endblock %}
+
+ 
