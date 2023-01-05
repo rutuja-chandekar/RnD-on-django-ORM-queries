@@ -18,6 +18,8 @@
     <th> Last name </th>
     <th> Selected Course </th>
     <th> Marks </th>
+    <th> Created at </th>
+    <th> Updated at </th>
   </tr>
 </thead>
 
@@ -30,6 +32,9 @@
       <td> {{Student.Last_name }} </td>
       <td> {{Student.Cname }} </td>
       <td> {{Student.marks }} </td>
+      <td> {{Student.created_at }} </td>
+      <td> {{Student.updated_at }} </td>
+
     </tr>
     {% endfor %}
   </tbody>

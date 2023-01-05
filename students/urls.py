@@ -5,6 +5,7 @@ from students.views import *
 app_name= "students"
 
 urlpatterns = [
+    path('index/', views.index, name='index'),
     path('',studentView.as_view(),name="studentView"),
     path('Add-student/',Add_student.as_view(),name="Add_student"),
     path('update/',update.as_view(),name="update"),  
