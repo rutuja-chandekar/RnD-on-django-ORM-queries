@@ -6,14 +6,15 @@ from students.models import *
 from students.forms import CourseForm, StudentForm, forms 
 from django.shortcuts import redirect
 from django.urls import reverse
-import logging
+import logging, traceback
 
 
 logger = logging.getLogger(__name__)
 
-def index(request):
-    logger.error("Test!!")
-    return HttpResponse("Hello logging world.")
+class index(View):
+    def get(self, request):
+        logging.info ("Test!!")
+        return HttpResponse("Hello logging world.")
 
 class studentView (View):
     def get(self, request):
