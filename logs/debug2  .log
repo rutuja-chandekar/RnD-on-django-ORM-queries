@@ -1,0 +1,2 @@
+INFO2023-01-06 18:08:36,428 autoreload 16568  1392 Watching for file changes with StatReloader
+INFO2023-01-06 18:08:39,264 autoreload 16568  1392 C:\Users\Admin\Desktop\django_project\test_project\test_project\settings.py changed, reloading.

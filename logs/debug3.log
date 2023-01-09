@@ -1,0 +1,25 @@
+INFO2023-01-06 18:09:45,939 autoreload 15792  13456 Watching for file changes with StatReloader
+INFO2023-01-06 18:09:52,581 basehttp 15792  17164 "GET /index/ HTTP/1.1" 200 20
+INFO2023-01-06 18:11:40,450 autoreload 15792  13456 C:\Users\Admin\Desktop\django_project\test_project\students\views.py changed, reloading.
+INFO2023-01-06 18:11:41,477 autoreload 1304  10576 Watching for file changes with StatReloader
+ERROR2023-01-06 18:14:27,377 log 1304  3688 Internal Server Error: /index/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\django_project\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Admin\Desktop\django_project\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Admin\Desktop\django_project\env\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Admin\Desktop\django_project\env\lib\site-packages\django\views\generic\base.py", line 101, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Admin\Desktop\django_project\test_project\students\views.py", line 18, in get
+    return HttpResponse(val, status=200)
+NameError: name 'val' is not defined
+ERROR2023-01-06 18:14:27,386 basehttp 1304  3688 "GET /index/ HTTP/1.1" 500 72174
+INFO2023-01-06 18:15:50,720 autoreload 1304  10576 C:\Users\Admin\Desktop\django_project\test_project\students\views.py changed, reloading.
+INFO2023-01-06 18:15:51,834 autoreload 16132  9800 Watching for file changes with StatReloader
+INFO2023-01-06 18:16:01,677 basehttp 16132  12016 "GET /index/ HTTP/1.1" 200 8
+INFO2023-01-06 18:16:40,366 basehttp 16132  12016 "GET /index/ HTTP/1.1" 200 8
+INFO2023-01-06 18:18:29,260 autoreload 16132  9800 C:\Users\Admin\Desktop\django_project\test_project\students\views.py changed, reloading.
+INFO2023-01-06 18:18:30,268 autoreload 16648  9504 Watching for file changes with StatReloader
+INFO2023-01-06 18:18:35,496 basehttp 16648  16340 "GET /index/ HTTP/1.1" 200 8

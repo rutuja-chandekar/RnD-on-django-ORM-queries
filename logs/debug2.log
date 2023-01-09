@@ -1,0 +1,11 @@
+INFO2023-01-06 18:06:16,141 autoreload 8992  12236 Watching for file changes with StatReloader
+INFO2023-01-06 18:06:45,044 basehttp 8992  8544 "GET /index/ HTTP/1.1" 200 20
+INFO2023-01-06 18:08:35,402 autoreload 8992  12236 C:\Users\Admin\Desktop\django_project\test_project\test_project\settings.py changed, reloading.
+INFO2023-01-06 18:08:40,445 autoreload 17176  16968 Watching for file changes with StatReloader
+INFO2023-01-06 18:08:54,754 autoreload 17176  16968 C:\Users\Admin\Desktop\django_project\test_project\students\views.py changed, reloading.
+INFO2023-01-06 18:08:55,858 autoreload 10852  9316 Watching for file changes with StatReloader
+INFO2023-01-06 18:09:01,084 autoreload 10852  9316 C:\Users\Admin\Desktop\django_project\test_project\students\views.py changed, reloading.
+INFO2023-01-06 18:09:02,747 autoreload 5104  360 Watching for file changes with StatReloader
+INFO2023-01-06 18:09:31,160 autoreload 5104  360 C:\Users\Admin\Desktop\django_project\test_project\students\views.py changed, reloading.
+INFO2023-01-06 18:09:32,688 autoreload 3404  2424 Watching for file changes with StatReloader
+INFO2023-01-06 18:09:44,756 autoreload 3404  2424 C:\Users\Admin\Desktop\django_project\test_project\test_project\settings.py changed, reloading.

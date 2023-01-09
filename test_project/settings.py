@@ -136,9 +136,16 @@ LOGGING ={
     },
     'handlers': {
         'file': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': './logs/debug.log',
+            'filename': './logs/debug3.log',
+            'formatter' : 'simple',
+        }
+    },
+    'formatters': {
+        'simple': {
+            'format' : '{levelname}{asctime} {module} {process:d} {thread: d} {message}',
+            'style' : '{',
         }
     }
 }

@@ -9,12 +9,14 @@ from django.urls import reverse
 import logging, traceback
 
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('  django')
 
 class index(View):
     def get(self, request):
-        logging.info ("Test!!")
-        return HttpResponse("Hello logging world.")
+        val={'response': 'user added'}
+        print('hello')
+        logger.info ('SOme message')
+        return HttpResponse(val, status=200)
 
 class studentView (View):
     def get(self, request):
