@@ -6,6 +6,8 @@ app_name= "students"
 
 urlpatterns = [
     path('index/',index.as_view(), name='index'),
+    path('logs/',WebAppListLogsView.as_view(), name="logs"),
+    
     path('',studentView.as_view(),name="studentView"),
     path('Add-student/',Add_student.as_view(),name="Add_student"),
     path('update/',update.as_view(),name="update"),  

@@ -130,8 +130,10 @@ LOGGING ={
     'version' : 1,
     'loggers': {
         'django': {
-            'handlers':['file'],
-            'level': 'DEBUG'
+            'handlers' : ['file'],
+            'level' : 'DEBUG',
+            'propogate': True,
+            'level' : os.getenv('DJANGO_LOG_LEVEL', 'DEBUG')
         }
     },
     'handlers': {
@@ -140,7 +142,11 @@ LOGGING ={
             'class': 'logging.FileHandler',
             'filename': './logs/debug3.log',
             'formatter' : 'simple',
-        }
+        },
+
+        'console' :{
+            'class' : 'logging.StreamHandler',
+        },
     },
     'formatters': {
         'simple': {
