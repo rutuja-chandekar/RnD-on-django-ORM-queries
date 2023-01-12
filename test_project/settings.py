@@ -138,9 +138,9 @@ LOGGING ={
     },
     'handlers': {
         'file': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': './logs/debug3.log',
+            'filename': './logs/debug.log',
             'formatter' : 'simple',
         },
 
