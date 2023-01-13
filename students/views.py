@@ -29,27 +29,11 @@ class WebAppListLogsView(View):
     print("in the class")
 
     def get(self, request):
-        context = super().get_context_data()
         filepath = open("C:\\Users\\Admin\\Desktop\\django_project\\test_project\\logs\\debug.log")
         log_file_data = filepath.readlines()
-        log_data = []; log_details = []
-        if log_file_data:
-            length = 0
-            total_length = len(log_file_data)
-            for log in log_file_data:
-                length += 1
-                if log.startswith('{'):
-                    if len(log_details) > 0:
-                        log_data.append(log_details)
-                    log_details = []
-                    log_details.append(log)
-                else:
-                    log_details.append(log)
-                if total_length == length:
-                    log_data.append(log_details)
-        context['data'] = log_data[::-1]
-        context['total_logs'] = len(log_data)
-        return render(request, "students/logs.html", context= {'context' : context})
+        log_file_data.reverse()
+        # print(log_file_data)
+        return render(request, "students/logs.html", context= {'log_file_data': log_file_data})
          
         
 
