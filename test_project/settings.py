@@ -150,7 +150,7 @@ LOGGING ={
     },
     'formatters': {
         'simple': {
-            'format' : '{levelname}{asctime} {module} {process:d} {thread: d} {message}',
+            'format' : '{levelname} {asctime} {module} {message}',
             'style' : '{',
         }
     }

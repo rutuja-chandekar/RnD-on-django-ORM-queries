@@ -9,6 +9,7 @@ from django.urls import reverse
 import logging, traceback
 import os
 from django.conf import settings
+from django.views.generic import TemplateView
 
 
 logger = logging.getLogger(__name__)
@@ -24,45 +25,35 @@ class index(View):
         except:
             logger.error('invalid')
 
-class WebAppListLogsView(View):
+class WebAppListLogsView(TemplateView):
     template_name = "students/logs.html"
     print("in the class")
 
-    def get(self, request):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         filepath = open("C:\\Users\\Admin\\Desktop\\django_project\\test_project\\logs\\debug.log")
         log_file_data = filepath.readlines()
-        log_file_data.reverse()
-        # print(log_file_data)
-        return render(request, "students/logs.html", context= {'log_file_data': log_file_data})
-         
+
+        log_data = []; log_details = []
+        if log_file_data:
+            length = 0
+            total_length = len(log_file_data)
+            for log in log_file_data:
+                length += 1
+                if log.startswith('INFO'):
+                    if len(log_details) > 0:
+                        log_data.append(log_details)
+                    log_details = []
+                    log_details.append(log)
+                else:
+                    log_details.append(log)
+                if total_length == length:
+                    log_data.append(log_details)
+        context['data'] = log_data[::-1]
+        context['total_logs'] = len(log_data)
+        return context
         
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     print("here  in the def")
-    #     filepath = os.path.join(settings.BASE_DIR, "debug3")
-    #     print(filepath)
-    #     log_file_data = [line.rstrip('\n') for line in open(filepath)]
-
-    #     log_data = []; log_details = []
-    #     if log_file_data:
-    #         length = 0
-    #         total_length = len(log_file_data)
-    #         for log in log_file_data:
-    #             length += 1
-    #             if log.startswith('{'):
-    #                 if len(log_details) > 0:
-    #                     log_data.append(log_details)
-    #                 log_details = []
-    #                 log_details.append(log)
-    #             else:
-    #                 log_details.append(log)
-    #             if total_length == length:
-    #                 log_data.append(log_details)
-    #     context['data'] = log_data[::-1]
-    #     context['total_logs'] = len(log_data)
-    #     return context
-
+        
 class studentView (View):
     def get(self, request):
         studentlist = Student.objects.all()
